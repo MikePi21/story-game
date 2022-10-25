@@ -18,8 +18,10 @@
 
   <ItemGroup>
     <None Remove="Helpers\" />
+    <None Remove="Context\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
+    <Folder Include="Context\" />
   </ItemGroup>
 </Project>

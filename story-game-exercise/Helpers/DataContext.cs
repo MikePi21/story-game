@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using story_game_exercise.Context;
 
 namespace story_game_exercise.Helpers
 {
@@ -18,7 +19,8 @@ namespace story_game_exercise.Helpers
             options.UseNpgsql(Configuration.GetConnectionString("WebApiDatabase"));
         }
 
-        //public DbSet<User> Users { get; set; }
-    }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<User> Users { get; set; }
+     }
 }
 
