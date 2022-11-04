@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using story_game_exercise.Helpers;
 
 namespace story_game_exercise.Controllers;
 
@@ -16,6 +17,8 @@ public class WeatherForecastController : ControllerBase
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
         _logger = logger;
+
+
     }
 
     [HttpGet(Name = "GetWeatherForecast")]

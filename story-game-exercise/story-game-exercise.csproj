@@ -19,9 +19,13 @@
   <ItemGroup>
     <None Remove="Helpers\" />
     <None Remove="Context\" />
+    <None Remove="Service\" />
+    <None Remove="Service\Interface\" />
+    <None Remove="Controllers\Commands\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Context\" />
+    <Folder Include="Controllers\Commands\" />
   </ItemGroup>
 </Project>

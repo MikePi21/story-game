@@ -14,7 +14,7 @@ namespace story_game_exercise.Migrations
                {
                    Id = table.Column<Guid>(),
                    Nickname = table.Column<string>(),
-                   Password = table.Column<Guid>()
+                   Password = table.Column<string>()
                },
                constraints: table =>
                {
