@@ -11,7 +11,7 @@ namespace story_game_exercise.Service
 
         }
 
-        public VmBook Create(VmBook comand)
+        public VmBook Create(VmBookCreateCommand command)
         {
             throw new NotImplementedException();
         }
@@ -21,7 +21,7 @@ namespace story_game_exercise.Service
             throw new NotImplementedException();
         }
 
-        public VmBook Get(int id)
+        public VmBook Get(Guid guid)
         {
             throw new NotImplementedException();
         }
@@ -31,7 +31,7 @@ namespace story_game_exercise.Service
             throw new NotImplementedException();
         }
 
-        public VmBook Update(VmBook comand)
+        public VmBook Update(VmBookUpdateCommand comand)
         {
             throw new NotImplementedException();
         }

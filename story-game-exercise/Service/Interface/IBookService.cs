@@ -9,11 +9,10 @@ namespace story_game_exercise.Service.Interface
 
         VmBook[] GetAll();
 
-        VmBook Get(int id);
+        VmBook Get(Guid guid);
 
-        VmBook Create(VmBook comand);
+        VmBook Create(VmBookCreateCommand command);
 
-        VmBook Update(VmBook comand);
-
+        VmBook Update(VmBookUpdateCommand comand);
     }
 }

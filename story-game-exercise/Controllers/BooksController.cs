@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using story_game_exercise.Controllers.Commands;
+using story_game_exercise.Service;
 using story_game_exercise.Service.Interface;
 
 namespace story_game_exercise.Controllers
@@ -13,14 +14,14 @@ namespace story_game_exercise.Controllers
 
         public BooksController()
         {
-            
+            bookService = new BookService();
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmBook))]
-        public VmBook Create(VmBook book)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmBookCreateCommand))]
+        public VmBook Create(VmBookCreateCommand command)
         {
-            return bookService.Create(book);
+            return bookService.Create(command);
         }
 
         [HttpDelete("{id:int}")]
@@ -33,9 +34,9 @@ namespace story_game_exercise.Controllers
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmBook))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public VmBook Get(Guid id)
+        public VmBook Get(Guid guid)
         {
-            return new VmBook();
+            return bookService.Get(guid);
         }
 
         [HttpGet]
@@ -47,7 +48,8 @@ namespace story_game_exercise.Controllers
 
         [HttpPatch]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmBook))]
-        public VmBook Update(VmBook book)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public VmBook Update(VmBookUpdateCommand book)
         {
             return bookService.Update(book);
         }
