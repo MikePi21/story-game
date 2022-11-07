@@ -12,9 +12,9 @@ namespace story_game_exercise.Controllers
     {
         IBookService bookService;
 
-        public BooksController()
+        public BooksController(IBookService bookService)
         {
-            bookService = new BookService();
+            this.bookService = bookService;
         }
 
         [HttpPost]
@@ -24,19 +24,20 @@ namespace story_game_exercise.Controllers
             return bookService.Create(command);
         }
 
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public void Delete(int id)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public void Delete(Guid id)
         {
             bookService.Delete(id);
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmBook))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public VmBook Get(Guid guid)
+        public VmBook Get(Guid id)
         {
-            return bookService.Get(guid);
+            return bookService.Get(id);
         }
 
         [HttpGet]

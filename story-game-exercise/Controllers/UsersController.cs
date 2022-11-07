@@ -12,14 +12,14 @@ namespace story_game_exercise.Controllers
     {
         IUserService userService;
 
-        public UsersController()
+        public UsersController(IUserService userService)
         {
-            userService = new UserService();
+            this.userService = userService;
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmUser))]
-        public VmUser Create(VmUser command)
+        public VmUser Create(VmUserCreateCommand command)
         {
             return userService.Create(command);
         }

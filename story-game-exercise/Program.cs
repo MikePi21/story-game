@@ -1,4 +1,9 @@
-﻿using story_game_exercise.Helpers;
+﻿using story_game_exercise.Context;
+using story_game_exercise.Controllers.Commands;
+using story_game_exercise.Helpers;
+using story_game_exercise.Service;
+using story_game_exercise.Service.Interface;
+using story_game_exercise.Translators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>();
+
+// Services
+builder.Services.AddTransient<IBookService, BookService>();
+builder.Services.AddTransient<IUserService, UserService>();
+
+// Translators
+builder.Services.AddSingleton<ITranslator<Book, VmBook>, BookTranslator>();
+builder.Services.AddSingleton<ITranslator<User, VmUser>, UserTranslator>();
 
 var app = builder.Build();
 

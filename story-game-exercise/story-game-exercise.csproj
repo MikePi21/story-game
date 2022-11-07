@@ -22,10 +22,12 @@
     <None Remove="Service\" />
     <None Remove="Service\Interface\" />
     <None Remove="Controllers\Commands\" />
+    <None Remove="Translators\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Context\" />
     <Folder Include="Controllers\Commands\" />
+    <Folder Include="Translators\" />
   </ItemGroup>
 </Project>

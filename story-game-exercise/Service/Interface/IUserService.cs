@@ -11,7 +11,7 @@ namespace story_game_exercise.Service.Interface
 
         VmUser Get(int id);
 
-        VmUser Create(VmUser command);
+        VmUser Create(VmUserCreateCommand command);
 
         VmUser Update(VmUser command);
     }

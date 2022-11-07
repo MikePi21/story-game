@@ -1,19 +1,35 @@
 ﻿using System;
+using story_game_exercise.Context;
 using story_game_exercise.Controllers.Commands;
+using story_game_exercise.Helpers;
 using story_game_exercise.Service.Interface;
 
 namespace story_game_exercise.Service
 {
     public class UserService : IUserService
     {
-        public UserService()
-        {
+        public DataContext context;
 
+        public UserService(DataContext context)
+        {
+            this.context = context;
         }
 
-        public VmUser Create(VmUser command)
+        public VmUser Create(VmUserCreateCommand command)
         {
-            throw new NotImplementedException();
+            User user = new User();
+            user.Nickname = command.Nickname;
+            user.Password = command.Password;
+
+            context.Users.Add(user);
+            context.SaveChanges();
+
+
+            VmUser vmUser = new VmUser();
+            vmUser.Id = user.Id;
+            vmUser.Nickname = user.Nickname;
+
+            return vmUser;
         }
 
         public void Delete(int id)

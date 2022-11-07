@@ -5,11 +5,11 @@ namespace story_game_exercise.Service.Interface
 {
     public interface IBookService
     {
-        void Delete(int id);
+        void Delete(Guid id);
 
         VmBook[] GetAll();
 
-        VmBook Get(Guid guid);
+        VmBook Get(Guid id);
 
         VmBook Create(VmBookCreateCommand command);
 
