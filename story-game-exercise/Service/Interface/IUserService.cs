@@ -5,15 +5,15 @@ namespace story_game_exercise.Service.Interface
 {
     public interface IUserService
     {
-        void Delete(int id);
+        void Delete(Guid id);
 
         VmUser[] GetAll();
 
-        VmUser Get(int id);
+        VmUser Get(Guid id);
 
         VmUser Create(VmUserCreateCommand command);
 
-        VmUser Update(VmUser command);
+        VmUser Update(VmUserUpdateCommand command);
     }
 }
 

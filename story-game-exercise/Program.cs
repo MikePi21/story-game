@@ -18,6 +18,7 @@ builder.Services.AddDbContext<DataContext>();
 // Services
 builder.Services.AddTransient<IBookService, BookService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IChapterService, ChapterService>();
 
 // Translators
 builder.Services.AddSingleton<ITranslator<Book, VmBook>, BookTranslator>();
