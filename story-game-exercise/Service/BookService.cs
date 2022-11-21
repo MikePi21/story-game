@@ -59,12 +59,12 @@ namespace story_game_exercise.Service
             return vmBooks;
         }
 
-        public VmBook Update(VmBookUpdateCommand comand)
+        public VmBook Update(VmBookUpdateCommand command)
         {
-            Book book = Find(comand.Id);
+            Book book = Find(command.Id);
 
-            book.Title = comand.Title;
-            book.Description = comand.Description;
+            book.Title = command.Title;
+            book.Description = command.Description;
 
             context.SaveChanges();
 

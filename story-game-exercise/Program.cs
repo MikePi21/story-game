@@ -23,6 +23,7 @@ builder.Services.AddTransient<IChapterService, ChapterService>();
 // Translators
 builder.Services.AddSingleton<ITranslator<Book, VmBook>, BookTranslator>();
 builder.Services.AddSingleton<ITranslator<User, VmUser>, UserTranslator>();
+builder.Services.AddSingleton<ITranslator<Chapter, VmChapter>, ChapterTranslator>();
 
 var app = builder.Build();
 

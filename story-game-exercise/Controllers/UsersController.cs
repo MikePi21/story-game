@@ -24,14 +24,15 @@ namespace story_game_exercise.Controllers
             return userService.Create(command);
         }
 
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public void Delete(Guid id)
         {
             userService.Delete(id);
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmUser))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public VmUser Get(Guid id)
@@ -48,7 +49,8 @@ namespace story_game_exercise.Controllers
 
         [HttpPatch]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmUser))]
-        public VmUser Update(VmUserUpdateCommand command )
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public VmUser Update(VmUserUpdateCommand command)
         {
             return userService.Update(command);
         }

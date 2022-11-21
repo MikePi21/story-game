@@ -13,6 +13,6 @@ namespace story_game_exercise.Service.Interface
 
         VmBook Create(VmBookCreateCommand command);
 
-        VmBook Update(VmBookUpdateCommand comand);
+        VmBook Update(VmBookUpdateCommand command);
     }
 }
