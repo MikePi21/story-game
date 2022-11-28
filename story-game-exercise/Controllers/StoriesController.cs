@@ -58,7 +58,7 @@ namespace story_game_exercise.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmStory[]))]
         public VmStory[] GetAllByChapterId(Guid chapterId)
         {
-            throw new NotImplementedException();
+            return storyService.GetAllByChapterId(chapterId);
         }
     }
 }

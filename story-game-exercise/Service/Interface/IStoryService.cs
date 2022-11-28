@@ -14,6 +14,8 @@ namespace story_game_exercise.Service.Interface
         VmStory Create(VmStoryCreateCommand command);
 
         VmStory Update(VmStoryUpdateCommand command);
+
+        VmStory[] GetAllByChapterId(Guid chapterId);
     }
 }
 

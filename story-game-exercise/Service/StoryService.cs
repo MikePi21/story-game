@@ -78,6 +78,15 @@ namespace story_game_exercise.Service
 
             return story;
         }
+
+        public VmStory[] GetAllByChapterId(Guid chapterId)
+        {
+            Story[] stories = context.Stories.Where(story => story.ChapterId == chapterId).ToArray();
+
+            VmStory[] vmStories = stories.Select(storyTranslator.Translate).ToArray();
+
+            return vmStories;
+        }
     }
 }
 
