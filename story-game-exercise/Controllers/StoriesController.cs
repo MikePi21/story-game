@@ -53,6 +53,13 @@ namespace story_game_exercise.Controllers
         {
             return storyService.Update(command);
         }
+
+        [HttpGet("GetAllByChapterId/{chapterId:Guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VmStory[]))]
+        public VmStory[] GetAllByChapterId(Guid chapterId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
