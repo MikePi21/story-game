@@ -19,11 +19,14 @@ builder.Services.AddDbContext<DataContext>();
 builder.Services.AddTransient<IBookService, BookService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IChapterService, ChapterService>();
+builder.Services.AddTransient<IStoryService, StoryService>();
+
 
 // Translators
 builder.Services.AddSingleton<ITranslator<Book, VmBook>, BookTranslator>();
 builder.Services.AddSingleton<ITranslator<User, VmUser>, UserTranslator>();
 builder.Services.AddSingleton<ITranslator<Chapter, VmChapter>, ChapterTranslator>();
+builder.Services.AddSingleton<ITranslator<Story, VmStory>, StoryTranslator>();
 
 var app = builder.Build();
 
